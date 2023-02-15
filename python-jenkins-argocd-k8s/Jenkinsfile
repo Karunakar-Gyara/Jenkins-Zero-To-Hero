@@ -33,6 +33,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Push to Repo'
+                    sh 'docker login -u karunakargyara -p Goal@2023'
                     docker push karunakargyara/django2:${BUILD_NUMBER}
                     '''
                 }
