@@ -80,7 +80,7 @@ pipeline {
                       
                       cd deploy
                       gcloud container clusters create-auto hello-gke --region=us-west4
-                      gcloud container clusters get-credentials hello-gke --region us-west2
+                      gcloud container clusters get-credentials hello-gke --region us-west4
                       kubectl apply -f deploy.yaml
                       kubectl apply -f service.yaml
                       kubectl get pods-o wide
