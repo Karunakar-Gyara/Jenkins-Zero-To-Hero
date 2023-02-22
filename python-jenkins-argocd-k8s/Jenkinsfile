@@ -79,7 +79,6 @@ pipeline {
                       gcloud auth activate-service-account --key-file=gke.json
                       
                       cd deploy
-                      gcloud config set project mygkeproject-377409
                       gcloud container clusters create-auto hello-gke --region=us-west4
                       gcloud container clusters get-credentials hello-gke --region us-west2
                       kubectl apply -f deploy.yaml
