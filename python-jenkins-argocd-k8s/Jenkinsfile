@@ -51,7 +51,7 @@ pipeline {
         stage('Update K8S manifest & push to Repo'){
             steps {
                 script{
-                     withCredentials([usernamePassword(credentialsId: 'git', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]){
+                     withCredentials([usernamePassword(credentialsId: 'git123', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]){
                     
                     sh '''
                         cd python-jenkins-argocd-k8s/deploy
@@ -63,7 +63,7 @@ pipeline {
                         git remote -v
                         git config --global user.name "Karunakar-Gyara"
                         git config --global user.email "karunakargyara74@gmail.com"
-                        git push https://github.com/Karunakar-Gyara/Jenkins-Zero-To-Hero.git
+                        git push https://$GITHUB_USERNAME:$GITHUB_PASSWORD@github.com/Karunakar-Gyara/Jenkins-Zero-To-Hero.git
                      
                         ''' 
                      }
