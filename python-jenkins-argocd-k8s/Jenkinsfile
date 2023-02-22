@@ -56,7 +56,7 @@ pipeline {
                     sh '''
                         cd python-jenkins-argocd-k8s/deploy
                         cat deploy.yaml
-                        sed -i "s/31/${BUILD_NUMBER}/g" deploy.yaml
+                        sed -i "s/32/${BUILD_NUMBER}/g" deploy.yaml
                         cat deploy.yaml
                         git add deploy.yaml
                         git commit -m 'Updated the deploy yaml | Jenkins Pipeline'
@@ -79,7 +79,6 @@ pipeline {
                       gcloud auth activate-service-account --key-file=gke.json
                       
                       cd deploy
-                      
                       gcloud container clusters get-credentials hello-gke --region us-west4
                       kubectl apply -f deploy.yaml
                       kubectl apply -f service.yaml
