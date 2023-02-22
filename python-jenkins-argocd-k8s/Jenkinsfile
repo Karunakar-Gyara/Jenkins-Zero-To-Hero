@@ -70,10 +70,10 @@ pipeline {
                 
                 }
             }
-       }
+         }
         stage('Deploy app to GKE'){
             steps {
-                script {
+                script{
                     sh '''
                       cd python-jenkins-argocd-k8s
                       gcloud auth activate-service-account --key-file=gke.json
@@ -87,7 +87,7 @@ pipeline {
                       kubectl apply -f service.yaml
                       kubectl get pods-o wide
                      '''
-                     }
+               }
             }
         }
                      
