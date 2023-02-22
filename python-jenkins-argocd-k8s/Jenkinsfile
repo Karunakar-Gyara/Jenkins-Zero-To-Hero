@@ -70,6 +70,12 @@ pipeline {
                 
                 }
             }
-        }
+       }
+        stage('Update K8S manifest & push to Repo'){
+            steps {
+                script {
+                    sh '''
+                     
+        
     }
 }
