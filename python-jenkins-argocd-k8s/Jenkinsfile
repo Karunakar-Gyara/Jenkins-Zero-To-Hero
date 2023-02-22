@@ -63,7 +63,7 @@ pipeline {
                         git remote -v
                         git config --global user.name "Karunakar-Gyara"
                         git config --global user.email "karunakargyara74@gmail.com"
-                        git push https://$GITHUB_USERNAME:$GITHUB_PASSWORD@github.com/Karunakar-Gyara/Jenkins-Zero-To-Hero.git
+                        git push https://github.com/Karunakar-Gyara/Jenkins-Zero-To-Hero.git
                      
                         ''' 
                      }
