@@ -5,7 +5,7 @@ metadata:
   labels:
     app: nginx
 spec:
-  replicas: 7
+  replicas: 8
   selector:
     matchLabels:
       app: nginx
@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: todo
-        image: karunakargyara/django3:7
+        image: karunakargyara/django3:8
         ports
-        - containerPort: 77000
+        - containerPort: 88000
