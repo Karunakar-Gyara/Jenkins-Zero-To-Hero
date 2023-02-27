@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: todo
-        image: karunakargyara/django3:11
+        image: karunakargyara/django3:12
         ports:
         - containerPort: 2023
