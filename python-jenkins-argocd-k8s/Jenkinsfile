@@ -83,8 +83,8 @@ pipeline {
                       gcloud container clusters get-credentials hello-gke --region us-west4
                       cd deploy
                       ls -ltr
-                      kubectl apply -f deploy.yaml
-                      kubectl apply -f service.yaml
+                      kubectl apply -f deploy1.yaml
+                      
                       kubectl get pods-o wide
                      '''
                }
