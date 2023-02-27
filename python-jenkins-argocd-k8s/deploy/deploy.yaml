@@ -17,5 +17,5 @@ spec:
       containers:
       - name: todo
         image: karunakargyara/django3:9
-        ports
+        ports:
         - containerPort: 77000
