@@ -22,7 +22,7 @@ pipeline {
                     sh '''
                     echo 'Buid Docker Image'
                     cd python-jenkins-argocd-k8s
-                    docker build -t karunakargyara/django2:${BUILD_NUMBER} .
+                    docker build -t karunakargyara/django3:${BUILD_NUMBER} .
                     '''
                 }
             }
