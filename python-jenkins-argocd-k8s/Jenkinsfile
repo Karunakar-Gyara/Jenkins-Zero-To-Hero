@@ -22,7 +22,7 @@ pipeline {
                     sh '''
                     echo 'Buid Docker Image'
                     cd python-jenkins-argocd-k8s
-                    docker build -t karunakargyara/django3:${BUILD_NUMBER} .
+                    docker build -t karunakargyara/django4:${BUILD_NUMBER} .
                     '''
                 }
             }
@@ -34,7 +34,7 @@ pipeline {
                     sh '''
                     echo 'Push to Repo'
                     docker login -u karunakargyara -p Goal@2023
-                    docker push karunakargyara/django3:${BUILD_NUMBER}
+                    docker push karunakargyara/django4:${BUILD_NUMBER}django
                     '''
                 }
             }
@@ -56,7 +56,7 @@ pipeline {
                     sh '''
                         cd python-jenkins-argocd-k8s/deploy
                         cat deploy.yaml
-                        sed -i "s/$((${BUILD_NUMBER}-1))/${BUILD_NUMBER}/g" deploy.yaml
+                        sed -i "s/$((${BUILD_NUMBER}-1))django/${BUILD_NUMBER}django/g" deploy.yaml
                         cat deploy.yaml
                         git add deploy.yaml
                         git commit -m 'Updated the deploy yaml | Jenkins Pipeline'
