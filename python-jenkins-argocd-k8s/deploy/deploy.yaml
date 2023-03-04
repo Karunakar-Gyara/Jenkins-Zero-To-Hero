@@ -18,4 +18,4 @@ spec:
       - name: todo
         image: karunakargyara/django3:12
         ports:
-        - containerPort: 2023
+        - containerPort: 8000
