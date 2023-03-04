@@ -21,8 +21,7 @@ pipeline {
                 script{
                     sh '''
                     echo 'Buid Docker Image'
-                    sudo -s
-                    echo Goal@2023
+                    
                     cd python-jenkins-argocd-k8s
                     docker build -t karunakargyara/django4:${BUILD_NUMBER} .
                     '''
