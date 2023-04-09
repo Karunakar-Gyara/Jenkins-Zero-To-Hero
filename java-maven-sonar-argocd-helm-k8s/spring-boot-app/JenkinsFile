@@ -52,7 +52,7 @@ pipeline {
         }
         steps {
              withCredentials([usernamePassword(credentialsId: 'git123', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]){
-             script {   
+         
                 sh '''
                     git config user.email "karunakargyara.xyz@gmail.com"
                     git config user.name "karunakar Gyara"
@@ -60,12 +60,12 @@ pipeline {
                     sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                     git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                    git push https://${GIT_PASSWORD}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME}.git HEAD:main
+                    git push https://${GIT_PASSWORD}@github.com/${GIT_USER_NAME}/${GIT_REPO_NAME} HEAD:main
               
              '''
              }
           }
        }
    }
-}
+
 
