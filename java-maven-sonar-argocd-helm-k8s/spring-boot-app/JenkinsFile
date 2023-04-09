@@ -45,30 +45,7 @@ pipeline {
         }
       }
     }
-   stage('Update K8S manifest & push to Repo'){
-            steps {
-                script{
-                     withCredentials([usernamePassword(credentialsId: 'git123', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]){
-                    
-                    sh '''
-                        
-                        
-                        BUILD_NUMBER=${BUILD_NUMBER}
-                        sed -i "s/replaceImageTag/${BUILD_NUMBER}/g" java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-                        
-                        git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
-                        git commit -m "Update deployment image to version ${BUILD_NUMBER}"
-                        git remote -v
-                        git config --global user.name "Karunakar-Gyara"
-                        git config --global user.email "karunakargyara74@gmail.com"
-                        git push https://${GIT_PASSWORD}@github.com/Karunakar-Gyara/Jenkins-Zero-To-Hero.git
-                     
-                        ''' 
-                     }
-                
-                }
-            }
-         }
-   }
+  
+ }
 
 
