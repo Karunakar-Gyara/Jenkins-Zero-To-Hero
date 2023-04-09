@@ -31,12 +31,16 @@ pipeline {
     }
     stage('Build and Push Docker Image') {
       environment {
-        DOCKER_IMAGE = "karunakargyara/django5:${BUILD_NUMBER}"
+        DOCKER_IMAGE = "karunakargyara/argocd:${BUILD_NUMBER}"
         }
       steps {
         script {
-            sh 'cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t ${DOCKER_IMAGE} .'
-            
+            sh '''
+               cd java-maven-sonar-argocd-helm-k8s/spring-boot-app && docker build -t ${DOCKER_IMAGE} .
+               echo 'Push to Repo'
+               docker login -u karunakargyara -p Goal@2023
+               docker push karunakargyara/argocd:${BUILD_NUMBER}
+            '''
             }
         }
       }
