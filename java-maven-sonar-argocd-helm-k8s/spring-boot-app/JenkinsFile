@@ -59,7 +59,7 @@ pipeline {
                         git add java-maven-sonar-argocd-helm-k8s/spring-boot-app-manifests/deployment.yml
                         git commit -m "Update deployment image to version ${BUILD_NUMBER}"
                         git remote -v
-                        git push https://${GIT_PASSWORD}@github.com/Karunakar-Gyara/Jenkins-Zero-To-Hero.git
+                        git push https://${GIT_PASSWORD}@github.com/Karunakar-Gyara/Jenkins-Zero-To-Hero.git HEAD:main
                      
                         ''' 
                      }
