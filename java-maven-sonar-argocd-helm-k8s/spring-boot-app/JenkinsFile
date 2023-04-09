@@ -44,10 +44,10 @@ pipeline {
             }
         }
       }
-    }
+    
   
   
-  stage('update the imagetag'){
+   stage('update the imagetag'){
             steps {
                 script{
                      withCredentials([usernamePassword(credentialsId: 'git123', passwordVariable: 'GIT_PASSWORD', usernameVariable: 'GIT_USERNAME')]){
@@ -67,6 +67,7 @@ pipeline {
                 }
             }
          }
- }
+  }
+}
 
 
